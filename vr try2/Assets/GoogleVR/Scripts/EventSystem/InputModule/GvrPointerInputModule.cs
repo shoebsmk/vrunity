@@ -69,6 +69,7 @@ public class GvrPointerInputModule : BaseInputModule, IGvrInputModuleController
     /// <summary>Manages scroll events for the input module.</summary>
     [Tooltip("Manages scroll events for the input module.")]
     public GvrPointerScrollInput scrollInput = new GvrPointerScrollInput();
+    
 
     /// <summary>Gets or sets the static reference to the `GvrBasePointer`.</summary>
     /// <value>The static reference to the `GvrBasePointer`.</value>
@@ -96,7 +97,7 @@ public class GvrPointerInputModule : BaseInputModule, IGvrInputModuleController
             module.Impl.Pointer = value;
         }
     }
-
+    
     /// <summary>Gets the current `RaycastResult`.</summary>
     /// <value>The current `RaycastResult`.</value>
     public static RaycastResult CurrentRaycastResult
@@ -174,6 +175,7 @@ public class GvrPointerInputModule : BaseInputModule, IGvrInputModuleController
         if (module.Impl.Pointer == null)
         {
             module.Impl.Pointer = createdPointer;
+            
         }
     }
 
