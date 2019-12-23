@@ -90,6 +90,7 @@ public class GvrReticlePointer : GvrBasePointer
     /// <value>The current outer diameter of the reticle (in meters).</value>
     public float ReticleOuterDiameter { get; private set; }
     public Vector3 obPos;
+    public float obDistance;
     public static GvrReticlePointer instance;
     
     /// <inheritdoc/>
@@ -108,11 +109,16 @@ public class GvrReticlePointer : GvrBasePointer
     public override void OnPointerHover(RaycastResult raycastResultResult, bool isInteractive)
     {
         SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
+        obDistance = raycastResultResult.distance;
         obPos = raycastResultResult.worldPosition;
     }
     public Vector3 getObPos()
     {
         return obPos;
+    }
+    public float getObDistance()
+    {
+        return obDistance;
     }
     /// <inheritdoc/>
     public override void OnPointerExit(GameObject previousObject)
